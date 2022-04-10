@@ -1,6 +1,13 @@
 const Users = ({user}) => {
     return (
-        <div>{user.login}</div>
+        <>
+          
+                <tr className="text-left">
+                    <td className="text-left">{user.id}</td>
+                    <td className="text-left">{user.login}</td>               
+                </tr>         
+           
+        </>
     )
 }
 
