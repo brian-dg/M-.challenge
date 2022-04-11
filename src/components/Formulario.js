@@ -1,6 +1,9 @@
 import { useState } from 'react';
+import ListUsers from './ListUsers';
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import { Button, InputGroup,Form, Row, Col, Alert } from "react-bootstrap";
 import useUsers from '../hooks/useUser';
+import Header from './Header';
 
 const Formulario = () => {
     const [search,setSearch] = useState({
@@ -8,6 +11,12 @@ const Formulario = () => {
     })
     const [alert,setAlert] = useState('')
     const {obteniendoUsers} = useUsers()
+
+    const navigate = useNavigate();
+    
+    const handleClick = () => {
+        navigate('usuarios')
+    }
     const handleSubmit = e => {
         e.preventDefault()
         if(Object.values(search).includes('')) {
@@ -19,6 +28,7 @@ const Formulario = () => {
     }
     return(
         <>
+            <Header/>
             <Form 
                onSubmit={handleSubmit}
             >
@@ -39,9 +49,12 @@ const Formulario = () => {
                                     [e.target.name] : e.target.value
                                 })}/> 
 
-                            <Button variant="primary" className=" my-1" type="submit">
-                                Buscar
-                            </Button>
+                           
+                                <Button onClick={handleClick} variant="primary" className=" my-1" type="submit">
+                                    Buscar
+                                </Button>
+                            
+                            
                   
                         </InputGroup>
                     </Col>                 

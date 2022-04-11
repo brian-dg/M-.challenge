@@ -5,8 +5,7 @@ const UsersContext = createContext()
 const UsersProvider = ({children}) => {
     const [users, setUsers] = useState([])
 
-    const obteniendoUsers = async datos => {
-        
+    const obteniendoUsers = async datos => {   
         try {          
             const url =  `https://api.github.com/search/users?q=${datos}`
             const { data } = await axios(url);
