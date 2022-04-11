@@ -1,6 +1,5 @@
 import React from 'react';
 import './App.css';
-import { Container } from 'react-bootstrap';
  import Formulario from './components/Formulario';
  import ListUsers from './components/ListUsers';
  import UserDetails from './components/UserDetails';

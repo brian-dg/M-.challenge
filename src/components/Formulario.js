@@ -33,8 +33,8 @@ const Formulario = () => {
                onSubmit={handleSubmit}
             >
                 {alert && <Alert variant='danger' className='text-center'>{alert}</Alert>}
-                <Row>
-                    <Col md={8}>
+                <Row className="row justify-content-center">
+                    <Col md={10}>
                         <InputGroup className="mb-3">
                           
 
@@ -50,7 +50,7 @@ const Formulario = () => {
                                 })}/> 
 
                            
-                                <Button onClick={handleClick} variant="primary" className=" my-1" type="submit">
+                                <Button onClick={handleClick} variant="primary" className=" mx-2" type="submit">
                                     Buscar
                                 </Button>
                             

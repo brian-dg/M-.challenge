@@ -1,6 +1,5 @@
 import useUsers from "../hooks/useUser";
 import {Row} from 'react-bootstrap';
-import { Link } from "react-router-dom";
 import users from './Users';
 import Users from "./Users";
 
@@ -9,12 +8,14 @@ const ListUsers = () => {
     const {users} = useUsers();
    
     return(
-        <Row className="col-8 p-5">
-            <table class="table table-hover">
+        <div className="row justify-content-center">
+            <div className="col-10">
+            <table className="table table-responsive table-bordered table-hover ">
                 <thead>
                     <tr>
                     <th scope="col">ID</th>
                     <th scope="col">NOMBRE</th>
+                    <th scope="col" className="ancho-columna">ACCIONES</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -27,8 +28,10 @@ const ListUsers = () => {
                
             ))}
                 </tbody>
-            </table>           
-        </Row>
+            </table>  
+            </div>   
+     
+        </div>
     )
 }
 
