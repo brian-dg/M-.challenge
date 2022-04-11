@@ -7,6 +7,7 @@ import Users from "./Users";
 
 const ListUsers = () => {
     const {users} = useUsers();
+   
     return(
         <Row className="col-8 p-5">
             <table class="table table-hover">
@@ -17,7 +18,8 @@ const ListUsers = () => {
                     </tr>
                 </thead>
                 <tbody>
-                {users.slice(0,10).map(user =>(                    
+                {users.slice(0,10).map(user =>(     
+                               
                      <Users
                         key={user.id}
                         user = {user}

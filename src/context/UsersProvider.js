@@ -17,13 +17,9 @@ const UsersProvider = ({children}) => {
         }
     }
 
-{/*   
+
     
 
-    useEffect(() =>{
-        obteniendoUsers({})
-    },[])
-*/}
   
     return(
         <UsersContext.Provider
