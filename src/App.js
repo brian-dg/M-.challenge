@@ -1,9 +1,9 @@
 import React from "react";
 import "./App.css";
 import Formulario from "./components/Formulario";
+import Home from "./components/Home";
 import Header from './components/Header';
 import ListUsers from "./components/ListUsers";
-import Home from "./components/Home";
 import UserDetails from "./components/UserDetails";
 import NotFoundPage from "./components/NotFoundPage";
 import { UsersProvider } from "./context/UsersProvider";
@@ -15,8 +15,8 @@ function App() {
       <UsersProvider>
         <Header />
         <Routes>     
-          <Route path="/" element={<Formulario />} />
-          <Route path="usuarios" element={<ListUsers />} />
+          <Route path="/" element={<Formulario />}/>                    
+          <Route path="usuarios" element={<ListUsers />} />         
           <Route exact path="/usuario/:userLogin" element={<UserDetails />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

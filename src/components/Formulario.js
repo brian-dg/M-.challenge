@@ -1,10 +1,9 @@
 import { useState } from "react";
-import ListUsers from "./ListUsers";
 import Home from "./Home";
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { Button, InputGroup, Form, Row, Col, Alert } from "react-bootstrap";
 import useUsers from "../hooks/useUser";
-import Header from "./Header";
+
 
 const Formulario = () => {
   const [search, setSearch] = useState({
@@ -21,7 +20,7 @@ const Formulario = () => {
       setAlert('react es una busqueda no permitida');
       return;
     }
-    if (Object.values(search).includes('')) {
+    if (Object.values(search.nombre).length < 4) {
       setAlert("Debe contener al menos 4 caracteres");
       return;
     }

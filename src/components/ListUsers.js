@@ -1,12 +1,12 @@
 import useUsers from "../hooks/useUser";
-import {Row} from 'react-bootstrap';
-import users from './Users';
+import Formulario from "./Formulario";
 import Users from "./Users";
 
 const ListUsers = () => {
     const {users} = useUsers();
    
     return(
+        <>      
         <div className="row justify-content-center">
             <div className="col-10">
             <table className="table table-responsive table-bordered table-hover ">
@@ -29,6 +29,7 @@ const ListUsers = () => {
             </table>  
             </div>        
         </div>
+    </>
     )
 }
 
