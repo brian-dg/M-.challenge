@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { GrView } from "react-icons/gr";
+
 const Users = ({ user }) => {
   return (
     <>
@@ -8,7 +9,7 @@ const Users = ({ user }) => {
         <td className="text-left">{user.login}</td>
         <td className="ancho-columna">
           <Link key={user.id} to={`/usuario/${user.login}`}>
-            <GrView className="icons" />
+            <GrView className="icons" style={{ fontSize: '20px'}}/>
           </Link>
         </td>
       </tr>

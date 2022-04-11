@@ -1,4 +1,12 @@
-
+/*home*/
+.home {
+  display: flex;
+  text-align: center;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 100px 0 0 0;
+}
 /*HEADER*/
 header {
   background-color: #176eb6;
@@ -152,4 +160,23 @@ header h1 {
 }
 .icons{
   width: 100%;
+}
+
+/*NotFound Page*/
+.no_encontrado{  
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+}
+.no_encontrado h1 {
+    color: black;
+}
+.no_encontrado a {
+    color: var(--primary);
+    text-decoration: none ;
+    font-size: 2rem ;
+    margin: 0;
+
 }

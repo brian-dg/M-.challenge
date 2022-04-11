@@ -1,7 +1,7 @@
 import React from "react";
 import { useParams } from "react-router";
 import { useState, useEffect } from "react";
-import {formatearFecha } from '../helpers/index';
+import { formatearFecha } from "../helpers/index";
 import axios from "axios";
 
 const UserDetails = () => {
@@ -48,10 +48,11 @@ const UserDetails = () => {
           <h5>Login: {users.login}</h5>
           <h5>Nombre: {users.name}</h5>
           <h5>Localizacion: {users.location}</h5>
-          <p>           
-            <i className="fas fa-map-marker-alt"></i> Fecha de creacion: {formatearFecha(users.created_at)}
+          <p>
+            <i className="fas fa-map-marker-alt"></i> Fecha de creacion:{" "}
+            {formatearFecha(users.created_at)}
           </p>
-        </div>      
+        </div>
       </div>
     </div>
   );

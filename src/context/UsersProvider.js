@@ -17,10 +17,6 @@ const UsersProvider = ({children}) => {
         }
     }
 
-
-    
-
-  
     return(
         <UsersContext.Provider
             value={{
@@ -37,5 +33,4 @@ const UsersProvider = ({children}) => {
 export {
     UsersProvider
 }
-
 export default UsersContext;
