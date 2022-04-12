@@ -1,6 +1,5 @@
 import React from "react";
 import "./App.css";
-import Formulario from "./components/Formulario";
 import Home from "./components/Home";
 import Header from './components/Header';
 import ListUsers from "./components/ListUsers";
@@ -9,14 +8,15 @@ import NotFoundPage from "./components/NotFoundPage";
 import { UsersProvider } from "./context/UsersProvider";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
+
 function App() {
   return (
     <Router>
       <UsersProvider>
-        <Header />
+        <Header />        
         <Routes>     
-          <Route path="/" element={<Formulario />}/>                    
-          <Route path="usuarios" element={<ListUsers />} />         
+          <Route path="/" element={<Home/>}/>                           
+          <Route path="usuarios" element={<ListUsers />} />                         
           <Route exact path="/usuario/:userLogin" element={<UserDetails />} />
           <Route path="*" element={<NotFoundPage />} />
         </Routes>

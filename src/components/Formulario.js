@@ -1,5 +1,4 @@
 import { useState } from "react";
-import Home from "./Home";
 import { useNavigate } from "react-router-dom";
 import { Button, InputGroup, Form, Row, Col, Alert } from "react-bootstrap";
 import useUsers from "../hooks/useUser";
@@ -7,7 +6,7 @@ import useUsers from "../hooks/useUser";
 
 const Formulario = () => {
   const [search, setSearch] = useState({
-    nombre: "",
+    nombre: ""
   });
   const [alert, setAlert] = useState("");
   const { obteniendoUsers } = useUsers();
@@ -40,7 +39,7 @@ const Formulario = () => {
         )}
         <Row className="row justify-content-center">
           <Col md={10}>
-            <InputGroup className="mb-3">
+            <InputGroup className="mb-3 ">
               <Form.Control
                 id="nombre"
                 type="text"
@@ -67,7 +66,7 @@ const Formulario = () => {
         </Row>
       </Form>
 
-      <Home/>
+     
     </>
   );
 };

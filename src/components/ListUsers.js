@@ -1,12 +1,15 @@
 import useUsers from "../hooks/useUser";
-import Formulario from "./Formulario";
+import Header from "./Header";
+import NotFoundPage from "./NotFoundPage";
 import Users from "./Users";
 
 const ListUsers = () => {
     const {users} = useUsers();
-   
+   console.log(users)
     return(
-        <>      
+        <>    
+        
+      {users.length === 0 ? <NotFoundPage/> :
         <div className="row justify-content-center">
             <div className="col-10">
             <table className="table table-responsive table-bordered table-hover ">
@@ -29,6 +32,7 @@ const ListUsers = () => {
             </table>  
             </div>        
         </div>
+    }
     </>
     )
 }

@@ -9,9 +9,9 @@ const UsersProvider = ({children}) => {
         try {          
             const url =  `https://api.github.com/search/users?q=${datos}`
             const { data } = await axios(url);
-            
+            console.log(data)
             setUsers(data.items)
-            console.log(users)
+            
         }catch(error){
             console.log(error)
         }
