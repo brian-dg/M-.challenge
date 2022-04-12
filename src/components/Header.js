@@ -1,5 +1,6 @@
 import React from "react";
 import {Link} from 'react-router-dom';
+import Formulario from "./Formulario";
 const Header = () => {
 return(
     <>
@@ -10,6 +11,7 @@ return(
             </h1>
         </header>
         </Link>
+        <Formulario/>
     </>
 ) 
      

@@ -4,6 +4,11 @@ const UsersContext = createContext()
 
 const UsersProvider = ({children}) => {
     const [users, setUsers] = useState([])
+    const [error, setError] = useState('')
+    const [viewError,setViewError] = useState(false)
+    const [search, setSearch] = useState({
+        nombre: "",
+      });
 
     const obteniendoUsers = async datos => {   
         try {          
@@ -11,17 +16,22 @@ const UsersProvider = ({children}) => {
             const { data } = await axios(url);
             
             setUsers(data.items)
-            console.log(users)
         }catch(error){
-            console.log(error)
+            setError(error)
+            setViewError(true)
         }
     }
+    
 
     return(
         <UsersContext.Provider
             value={{
                 obteniendoUsers,
-                users
+                users,
+                search,
+                setSearch,
+                error,
+                viewError
             }}
         >
             {children}

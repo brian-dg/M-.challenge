@@ -3,27 +3,33 @@ import { useParams } from "react-router";
 import { useState, useEffect } from "react";
 import { formatearFecha } from "../helpers/index";
 import axios from "axios";
+import Error from "./Error";
 
 const UserDetails = () => {
   const { userLogin } = useParams();
+
   const [users, setUsers] = useState("");
+  const [viewError, setViewError] = useState(false);
+  const [error, setError] = useState("");
+
+  const getUserDetails = async () => {
+    try {
+      const url = `https://api.github.com/users/${userLogin}`;
+      const { data } = await axios(url);
+      setUsers(data);
+    } catch (error) {
+      setError(error);
+      setViewError(true);
+    }
+  };
 
   useEffect(() => {
-    const getUserDetails = async () => {
-      if (!userLogin) return;
-      try {
-        const url = `https://api.github.com/users/${userLogin}`;
-        const { data } = await axios(url);
-        setUsers(data);
-      } catch (error) {
-        console.log(error);
-      }
-    };
     getUserDetails();
   }, [userLogin]);
 
   return (
     <div className="Card">
+      {viewError ? <Error value= {{error}} /> : 
       <div className="card-user">
         <div className="seccion-avatar">
           <div className="avatar">
@@ -54,6 +60,7 @@ const UserDetails = () => {
           </p>
         </div>
       </div>
+    }
     </div>
   );
 };
