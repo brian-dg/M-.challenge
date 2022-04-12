@@ -4,33 +4,34 @@ const UsersContext = createContext()
 
 const UsersProvider = ({children}) => {
     const [users, setUsers] = useState([])
+    const [error, setError] = useState('')
+    const [viewError,setViewError] = useState(false)
+    const [search, setSearch] = useState({
+        nombre: "",
+      });
 
-    const obteniendoUsers = async datos => {
-        
+    const obteniendoUsers = async datos => {   
         try {          
             const url =  `https://api.github.com/search/users?q=${datos}`
             const { data } = await axios(url);
             
             setUsers(data.items)
-            console.log(users)
         }catch(error){
-            console.log(error)
+            setError(error)
+            setViewError(true)
         }
     }
-
-{/*   
     
 
-    useEffect(() =>{
-        obteniendoUsers({})
-    },[])
-*/}
-  
     return(
         <UsersContext.Provider
             value={{
                 obteniendoUsers,
-                users
+                users,
+                search,
+                setSearch,
+                error,
+                viewError
             }}
         >
             {children}
@@ -42,5 +43,4 @@ const UsersProvider = ({children}) => {
 export {
     UsersProvider
 }
-
 export default UsersContext;
