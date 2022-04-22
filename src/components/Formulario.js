@@ -4,14 +4,8 @@ import { Button, InputGroup, Form, Row, Col, Alert } from "react-bootstrap";
 import useUsers from "../hooks/useUser";
 
 const Formulario = () => {
-<<<<<<< HEAD
-=======
-  const [search, setSearch] = useState({
-    nombre: ""
-  });
->>>>>>> d799c9ac27aa201e06fbdd4b47b9c5dc5b137ec9
   const [alert, setAlert] = useState("");
-  const { search, setSearch, obteniendoUsers } = useUsers();
+  const { search,setUsers,setSearch, obteniendoUsers } = useUsers();
 
   const navigate = useNavigate();
 
@@ -29,6 +23,11 @@ const Formulario = () => {
     setAlert("");
     obteniendoUsers(search.nombre);
     navigate("usuarios");
+    
+    setSearch({
+      nombre:''
+    })
+
   };
   return (
     <>
@@ -40,7 +39,7 @@ const Formulario = () => {
         )}
         <Row className="row justify-content-center">
           <Col md={10}>
-            <InputGroup className="mb-3 ">
+            <InputGroup className="mb-3">
               <Form.Control
                 id="nombre"
                 type="text"
@@ -62,11 +61,6 @@ const Formulario = () => {
           </Col>
         </Row>
       </Form>
-<<<<<<< HEAD
-=======
-
-     
->>>>>>> d799c9ac27aa201e06fbdd4b47b9c5dc5b137ec9
     </>
   );
 };
